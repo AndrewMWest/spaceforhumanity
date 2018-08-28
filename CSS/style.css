@@ -34,11 +34,17 @@ body {
         font-size: 1rem;
     }
 
-    section#matters {
+    /* section#matters {
         background: url(../img/busyCellphone.jpg) no-repeat bottom/cover;
         padding: 10rem 0;
         background-blend-mode: lighten;
-          }
+          } */
+
+          #mattersLeft {
+            background: url(../img/busyCellphone.jpg) no-repeat bottom/cover;
+            padding: 10rem 0;
+            background-blend-mode: lighten;
+              }     
     
     /* Button */
 

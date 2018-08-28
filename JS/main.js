@@ -36,6 +36,6 @@ $('.cf a').on('click', function(event) {
             function(){
                 window.location.hash = hash;
             }
-        })
+        );
     }
-})
+});

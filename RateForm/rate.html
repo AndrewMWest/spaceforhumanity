@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+  
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <h1>Rate this Space
+            </h1>
+        </div>
+    <div class="row">
+        <div class="col-sm-12">
+                <form>
+                        <h5 for="inlineRadio1">Name of the space:</h5>
+                        <div class="form-group row">  
+                            <input class="form-control" type="text" placeholder="place name here">
+                        </div>
+                        <h5 for="inlineRadio1">Rate the noise level (1 being most quiet):</h5>
+                        <div class="form-group row">  
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="noise" id="inlineRadio1" value="1">
+                                <label class="form-check-label" for="inlineRadio1">1</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="noise" id="inlineRadio2" value="2">
+                                <label class="form-check-label" for="inlineRadio2">2</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="noise" id="inlineRadio3" value="3">
+                                <label class="form-check-label" for="inlineRadio3">3</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="noise" id="inlineRadio2" value="4">
+                                    <label class="form-check-label" for="inlineRadio2">4</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="noise" id="inlineRadio3" value="5">
+                                    <label class="form-check-label" for="inlineRadio3">5</label>
+                                </div>
+                    </div>
+
+                    <h5 for="inlineRadio1">Rate the Architectural Beauty  (5 being the best):</h5>
+                        <div class="form-group row">  
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="ab" id="inlineRadio1" value="1">
+                                <label class="form-check-label" for="inlineRadio1">1</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="ab" id="inlineRadio2" value="2">
+                                <label class="form-check-label" for="inlineRadio2">2</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="ab" id="inlineRadio3" value="3">
+                                <label class="form-check-label" for="inlineRadio3">3</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="ab" id="inlineRadio2" value="4">
+                                    <label class="form-check-label" for="inlineRadio2">4</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="ab" id="inlineRadio3" value="5">
+                                    <label class="form-check-label" for="inlineRadio3">5</label>
+                                </div>
+                    </div>
+                    
+                    <button class="btn btn-primary" id="submit">Submit Rating</button>
+                </form>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+            </div>
+        </div>
+</div>
+<script
+src="http://code.jquery.com/jquery-3.3.1.min.js"
+integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+crossorigin="anonymous"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        var scoreCard = 
+        {
+            noise:0,
+            ab:0,
+            total:0,
+            avg:0
+        };
+        function getTotal(scoreCardArg)
+        {
+           return scoreCardArg.noise + scoreCardArg.ab;
+        }
+        function getAvg(scoreCardArg)
+        {
+            return (scoreCardArg.noise + scoreCardArg.ab)/2;
+        }
+        $("#submit").click(function(e){
+            e.preventDefault();
+
+            scoreCard.noise = $("input[name='noise']:checked").val();
+            //console.log("expect 4 ", parseInt(scoreCard.noise, 10));
+            scoreCard.noise = parseInt(scoreCard.noise, 10);//turn into num
+
+
+            //scoreCard.ab = parseInt($("input[name='ab']:checked").val(), 10);
+            scoreCard.ab = $("input[name='ab']:checked").val();
+            //console.log("expect 4 ", parseInt(scoreCard.noise, 10));
+            scoreCard.ab = parseInt(scoreCard.ab, 10);//turn into num       
+            
+            scoreCard.total = getTotal(scoreCard);
+            scoreCard.avg = getAvg(scoreCard);
+            console.log("score card (just to be able see) ", scoreCard);
+            
+        });
+        
+    });
+</script>
+</body>
+</html>
