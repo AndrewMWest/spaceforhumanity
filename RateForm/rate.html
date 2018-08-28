@@ -18,6 +18,7 @@
         </div>
     <div class="row">
         <div class="col-sm-12">
+                
                 <form>
                         <h5 for="inlineRadio1">Name of the space:</h5>
                         <div class="form-group row">  
@@ -92,14 +93,17 @@ crossorigin="anonymous"></script>
             total:0,
             avg:0
         };
+
         function getTotal(scoreCardArg)
         {
            return scoreCardArg.noise + scoreCardArg.ab;
         }
+
         function getAvg(scoreCardArg)
         {
             return (scoreCardArg.noise + scoreCardArg.ab)/2;
         }
+
         $("#submit").click(function(e){
             e.preventDefault();
 
