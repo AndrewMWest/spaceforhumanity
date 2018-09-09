@@ -24,7 +24,7 @@
                         <div class="form-group row">  
                             <input class="form-control" type="text" placeholder="place name here">
                         </div>
-                        <h5 for="inlineRadio1">Rate the noise level (1 being most quiet):</h5>
+                        <h5 for="inlineRadio1">Rate the noise level (5 being most quiet):</h5>
                         <div class="form-group row">  
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" type="radio" name="noise" id="inlineRadio1" value="1">
@@ -121,7 +121,9 @@ crossorigin="anonymous"></script>
             scoreCard.avg = getAvg(scoreCard);
             console.log("score card (just to be able see) ", scoreCard);
             
+            alert("Average Score for this Space is " + scoreCard.avg);
         });
+        
         
     });
 </script>

@@ -39,3 +39,6 @@ $('.cf a').on('click', function(event) {
         );
     }
 });
+
+//Create Social Media plugins
+
