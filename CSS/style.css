@@ -25,14 +25,63 @@ body {
         padding: 2rem 0;
     }
 
+    .section h3 {
+        font-size: 1rem;
+    }
+
+    .goal {
+        padding: 2rem 0;
+    }
+
+    .goal h3 {
+        font-size: 1rem;
+    }
+
+    .criteria {
+        padding: 2rem 0;
+    }
+
+    .criteria h3 {
+        font-size: 1rem;
+    }
+
+    .nominate {
+        padding: 2rem 0;
+    }
+
+    .nominate h3 {
+        font-size: 1rem;
+    }
+
+    .mattersLeft {
+        padding: 2rem 0;
+    }
+
+    .mattersLeft h3 {
+        font-size: 1rem;
+    }
+
+    .map {
+        padding: 2rem 0;
+    }
+
+    .map h3 {
+        font-size: 1rem;
+    }
+
+    .footer-cols {
+        padding: 2rem 0;
+    }
+
+    .footer-cols {
+        font-size: 1rem;
+    }
+
     .section-head {
         font-size: 1.5rem;
         margin: 0;
     }
 
-    .section h3 {
-        font-size: 1rem;
-    }
 
     /* section#matters {
         background: url(../img/busyCellphone.jpg) no-repeat bottom/cover;

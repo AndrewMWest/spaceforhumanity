@@ -22,7 +22,7 @@
                 <form>
                         <h5 for="inlineRadio1">Name of the space:</h5>
                         <div class="form-group row">  
-                            <input class="form-control" type="text" placeholder="place name here">
+                            <input class="form-control" type="text" placeholder="place name here" name="space">
                         </div>
                         <h5 for="inlineRadio1">Rate the noise level (5 being most quiet):</h5>
                         <div class="form-group row">  
@@ -260,12 +260,24 @@ crossorigin="anonymous"></script>
             scoreCard.fac = $("input[name='fac']:checked").val();
             //console.log("expect 4 ", parseInt(scoreCard.noise, 10));
             scoreCard.fac = parseInt(scoreCard.fac, 10);//turn into num 
+
+            //capture Space Name for API 'post'
+            scoreCard.spacename = $('.form-control').val();
+            console.log(scoreCard.spacename);
             
             scoreCard.total = getTotal(scoreCard);
             scoreCard.avg = getAvg(scoreCard);
             console.log("score card (just to be able see) ", scoreCard);
             
             alert("Average Score for this Space is " + scoreCard.avg);
+
+            //Upon 'Submit', data will be 'posted' to API Web service (future database).
+            $.ajax({
+                url: "https://somedb.com",
+                Method: 'POST',
+                data: {name: scoreCard.spacename, score: scoreCard.avg, noise: scoreCard.noise, archBeauty: scoreCard.ab, engagement: scoreCard.eng, community: scoreCard.com, naturalBeauty: scoreCard.nb, facilitation: scoreCard.fac, interrupption: scoreCard.int}
+
+            })
         });
         
         
